@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+       <div id="test"> AJAX TEST</div>
+       
+   <script>
+     var count=0;
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+               if (this.readyState==4 && this.status==200){
+                   document.getElementById('test').innerHTML=this.response;
+               }
+            }
+            xhr.open("GET","./test.json",true)
+            xhr.send();
+
+   </script>
+       
+
+   
+    </body>
+</html>
