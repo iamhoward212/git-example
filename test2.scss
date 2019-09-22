@@ -1,0 +1,79 @@
+$objectList:(
+    (name:xs,size:7px),(name:sm,size:14px),
+    (name:md,size:16px),(name:lg,size:18px),
+);
+// $index:1;
+// $indexEnd:length($objectList);
+
+// @while $index <= $indexEnd {
+//     $obj:nth($objectList,$index);
+//     $name:map-get($obj,name);
+//     $size:map-get($obj,size);
+//     .icon-#{$name}{
+//         font-size:$size;
+//     }
+
+//     $index: $index + 1;
+// }
+
+// @for $index from 1 through length($objectList){
+//     $obj:nth($objectList,$index);
+//     $name:map-get($obj,name);
+//     $size:map-get($obj,size);
+//     .icon-#{$name}{
+//         font-size:$size;
+//     }   
+// }
+@mixin creat-icon($obj){
+    $name:map-get($obj,name);
+    $size:map-get($obj,size);
+    .icon-#{$name}{
+        font-size:$size;
+    }  
+}
+
+@each $obj in $objectList {
+     @include creat-icon($obj)
+}
+
+
+
+
+// @each $obj in $objectList {
+//     $name:map-get($obj,name);
+//     $size:map-get($obj,size);
+//     .icon-#{$name}{
+//         font-size:$size;
+//     }   
+// }
+
+// @while $index >= 1{
+//     $obj:nth($objectList,$index);
+//     $xsName:map-get($obj,name);
+//     $xsSize:map-get($obj,size);
+
+//     .btn-#{$xsName}{
+//         font-size:$xsSize;
+//     }
+//     $index:$index -1
+// };
+
+// @function scale-below($value, $base, $ratio: 1.618) {
+//     @while $value > $base {
+      
+//         $value: $value / $ratio;
+
+//     }
+//     @return $value;
+//   }
+  
+//   $normal-font-size: 16px;
+//   sup {
+//     font-size: scale-below(20px, 1px);
+//   }
+  
+// @for $index from 0 through 1{
+//     .test-#{$index}{
+//         color:red;
+//     }
+// }
